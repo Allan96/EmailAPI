@@ -1,170 +1,212 @@
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="./assets/js/download.js"></script>
-<script src="./assets/js/main.js?5"></script>
-<html>
-   <head>
-      <title> Economatica  
-      </title>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-   </head>
-   <div style="width: 50%; float: left;">
+<!-- SISTEMA FEITO POR ALLAN SOUZA
+DESENVOLVEDOR FULL STACK -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gerador de Estudos - [BETA]</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-sm navbar-dark mb-5" style="background-color: black;">
+            <div class="container">
+            <a class="navbar-brand" href="#">Estudos API</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"></button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
 
    <div bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email">
-       <!-- HTML 4 -->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <!-- HTML5 -->
-        <meta charset="utf-8"/>
-      <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="border: solid 1px #b9d3d1;">
-         <tr>
-            <td>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="20">
-                     </td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="275" height="50"></td>
-                     <td width="50" height="50">
-                        <img width="50" height="50" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_logo.png"
-                           alt="economatica" style="display:block; border:none; padding:none; margin:none;">
-                     </td>
-                     <td width="275" height="50"></td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="30">
-                     </td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="15">
-                     </td>
-                  </tr>
-               </table>
-               <!-- GERAR EMAIL -->
-               <gerador></gerador>
-               <!-- GERAR EMAIL -->
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="40"></td>
-                     <td width="520">
-                        <font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;">
-                        </font>
-                        <br>
-                        <br>
-                        <font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 13px; color: #4a4a4a; line-height: 1.69; text-decoration: none; ">
-                        Caso deseje a lista completa da amostra e já é usuário da nossa solução, entre em contato com a Economatica pelo telefone 011 40813800 ou pelo e-mail  <a href="mailto:info@economatica.com.br" target="_blank">info@economatica.com.br</a> . Se ainda não é nosso usuário solicite uma apresentação da plataforma pelos mesmos canais.
-                        <br><br>
-                        </font>
-                     </td>
-                     <td width="40"></td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="20">
-                     </td>
-                  </tr>
-               </table>
-               <table width="650" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tbody>
-                     <tr>
-                        <td width="70" height="70">
-                        </td>
-                        <td width="255" height="100">
-                           <a href="https://economatica.com/" target="_blank">
-                           <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/btn.png" alt="" style="display:block; border:none; padding:none; margin:none;">
-                           </a>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="70">
-                     </td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="40" height="39">
-                     </td>
-                     <td width="233" height="39">
-                        <a href="https://economatica.com/" target="_blank">
-                        <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/logo_full.jpg" alt="" width="239" height="48"
-                           style="display:block; border:none; padding:none; margin:none;">
-                        </a>
-                     </td>
-                     <td width="375" height="39">
-                     </td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="50">
-                     </td>
-                  </tr>
-               </table>
-               <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                  <tr>
-                     <td width="600" height="70">
-                        <img width="600" height="70" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/pattern.png" alt=""
-                           style="display:block; border:none; padding:none; margin:none;">
-                     </td>
-                  </tr>
-               </table>
-            </td>
-         </tr>
-      </table>
-      <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-         <tr>
-            <td border="0" cellpadding="0" cellspacing="0" display: "block" width="600" height="60" colspan="17" bgcolor="#FFFFFF" style=" font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #4a4a4a;  text-align: center;">Receba nossos estudos pelas redes sociais.</td>
-         </tr>
-      </table>
-      <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-         <tr>
-            <td width="236" height="29"></td>
-            <td border="0" cellpadding="0" cellspacing="0" width="29" height="29">
-               <a href="https://www.facebook.com/Economatica-235736809784091">
-               <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_facebook.png" width="29" height="29"
-                  alt="facebook">
-               </a>
-            </td>
-            <td width="20" height="29"></td>
-            <td border="0" cellpadding="0" cellspacing="0" width="30" height="29">
-               <a href="https://www.linkedin.com/company-beta/1928466/">
-               <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_linkedin.png" width="30" height="29"
-                  alt="linkedin">
-               </a>
-            </td>
-            <td width="20" height="29"></td>
-            <td border="0" cellpadding="0" cellspacing="0" width="29" height="29">
-               <a href="http://economatica.com/acertemais/">
-               <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_link.png" width="29" height="29"
-                  alt="Economatica">
-               </a>
-            </td>
-            <td width="236" height="29"></td>
-         </tr>
-      </table>
-      <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-         <tr>
-            <td border="0" cellpadding="0" cellspacing="0" display: "block" width="600" height="50"></td>
-         </tr>
-      </table>
-</div>
+        <!-- HTML 4 -->
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+         <!-- HTML5 -->
+         <meta charset="utf-8"/>
+       <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="border: solid 1px #b9d3d1;">
+          <tr>
+             <td>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="20">
+                      </td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="275" height="50"></td>
+                      <td width="50" height="50">
+                         <img width="50" height="50" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_logo.png"
+                            alt="economatica" style="display:block; border:none; padding:none; margin:none;">
+                      </td>
+                      <td width="275" height="50"></td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="30">
+                      </td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="15">
+                      </td>
+                   </tr>
+                </table>
+                <!-- GERAR EMAIL -->
+                <gerador></gerador>
+                <!-- GERAR EMAIL -->
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="40"></td>
+                      <td width="520">
+                         <font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;">
+                         </font>
+                         <br>
+                         <br>
+                         <font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 13px; color: #4a4a4a; line-height: 1.69; text-decoration: none; ">
+                         Caso deseje a lista completa da amostra e já é usuário da nossa solução, entre em contato com a Economatica pelo telefone 011 40813800 ou pelo e-mail  <a href="mailto:info@economatica.com.br" target="_blank">info@economatica.com.br</a> . Se ainda não é nosso usuário solicite uma apresentação da plataforma pelos mesmos canais.
+                         <br><br>
+                         </font>
+                      </td>
+                      <td width="40"></td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="20">
+                      </td>
+                   </tr>
+                </table>
+                <table width="650" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tbody>
+                      <tr>
+                         <td width="70" height="70">
+                         </td>
+                         <td width="255" height="100">
+                            <a href="https://economatica.com/" target="_blank">
+                            <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/btn.png" alt="" style="display:block; border:none; padding:none; margin:none;">
+                            </a>
+                         </td>
+                      </tr>
+                   </tbody>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="70">
+                      </td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="40" height="39">
+                      </td>
+                      <td width="233" height="39">
+                         <a href="https://economatica.com/" target="_blank">
+                         <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/logo_full.jpg" alt="" width="239" height="48"
+                            style="display:block; border:none; padding:none; margin:none;">
+                         </a>
+                      </td>
+                      <td width="375" height="39">
+                      </td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="50">
+                      </td>
+                   </tr>
+                </table>
+                <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+                   <tr>
+                      <td width="600" height="70">
+                         <img width="600" height="70" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/pattern.png" alt=""
+                            style="display:block; border:none; padding:none; margin:none;">
+                      </td>
+                   </tr>
+                </table>
+             </td>
+          </tr>
+       </table>
+       <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+          <tr>
+             <td border="0" cellpadding="0" cellspacing="0" display: "block" width="600" height="60" colspan="17" bgcolor="#FFFFFF" style=" font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #4a4a4a;  text-align: center;">Receba nossos estudos pelas redes sociais.</td>
+          </tr>
+       </table>
+       <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+          <tr>
+             <td width="236" height="29"></td>
+             <td border="0" cellpadding="0" cellspacing="0" width="29" height="29">
+                <a href="https://www.facebook.com/Economatica-235736809784091">
+                <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_facebook.png" width="29" height="29"
+                   alt="facebook">
+                </a>
+             </td>
+             <td width="20" height="29"></td>
+             <td border="0" cellpadding="0" cellspacing="0" width="30" height="29">
+                <a href="https://www.linkedin.com/company/economatica---software-de-apoio-a-investidores/">
+                <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_linkedin.png" width="30" height="29"
+                   alt="linkedin">
+                </a>
+             </td>
+             <td width="20" height="29"></td>
+             <td border="0" cellpadding="0" cellspacing="0" width="29" height="29">
+                <a href="http://economatica.com/">
+                <img src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/icon_link.png" width="29" height="29"
+                   alt="Economatica">
+                </a>
+             </td>
+             <td width="236" height="29"></td>
+          </tr>
+       </table>
+       <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+          <tr>
+             <td border="0" cellpadding="0" cellspacing="0" display: "block" width="600" height="50"></td>
+          </tr>
+       </table>
+ </div>
+            </div>
 
-</div>
-<div style="width: 50%; float: right;">
-            <br><br>
-      Estudo gerado, caso você queira baixar clique no botão abaixo;
-      <br><br>
-      <button class="baixar" type="button">
-            BAIXAR O ARQUIVO HTML
-      </button>
-</div>
+            <div class="col-4">
+                <p>
+                    <b>Todo o texto é gerado numa planilha de excel, acesse o link abaixo para abrir a planilha!</b>
+                    <br>
+                    <a href="https://docs.google.com/spreadsheets/d/1SK4NJIpVlqIHxY2Jivpf1aDuVdJsiguS1AJiFlDWs4U/edit#gid=0" target="_blank">
+                            Clique aqui para editar a planilha!
+                    </a>
+                    <br><br>
+                    <b>Estudo gerado! </b><br>
+                    Caso você queira baixar clique no botão abaixo
+                </p>
+                    <br>
+                    <button type="button" class="btn btn-primary baixar mb-5 w-100">Download do Estudo</button>
+                    <hr>
+                    <div class="form-group mt-5">
+                      <label for="">Envie um e-mail de teste</label>
+                      <input type="text"
+                        class="form-control" name="" id="" aria-describedby="helpId" placeholder="Insira o seu e-mail">
+                      <small id="helpId" class="form-text text-muted">Insira o seu e-mail, para enviarmos o teste.</small>
+                      <br>
+                      <button type="button" class="btn btn-primary w-100">Enviar teste</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="./assets/js/download.js"></script>
+    <script src="./assets/js/main.js?5"></script>
+  </body>
 </html>

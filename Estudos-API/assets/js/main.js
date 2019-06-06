@@ -61,12 +61,11 @@ $.ajax({
 });
 
 $(document).ready(function() {
-$('.baixar').click(function () {
+    $('.baixar').click(function () {
+        var d = new Date();
+        var name = d.getFullYear() + '-' + d.getDate() + '-' + d.getDate() + '-' + 'estudo';
 
-    var d = new Date();
-    var name = d.getFullYear() + '-' + d.getDate() + '-' + d.getDate() + '-' + 'estudo';
-    
-    var body = document.getElementById("email");
-    download(body.outerHTML, name + ".html", "text/html");
-});
+        var body = document.getElementById("email");
+        download(body.outerHTML, name + ".html", "text/html");
+    });
 });
