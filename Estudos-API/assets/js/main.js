@@ -1,15 +1,13 @@
-function Imagem(imagem){
+function RenderImagem(imagem){
     //RENDERIZA AS IMAGEMS SE TIVER
     return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">'+
-    '<td width="600" height="374">'+
-      '<center><img src="'+ imagem + '" alt="Quantidade de empresas" style="max-width: 600px;display:block; border:none; padding:none; margin:none; "></center>'+
-    '</td>'+
-    '<td width="19" height="374">'+
-   '</td>'+
- '</tr>'+
-'</table>';
+                '<td width="600" height="374">'+
+                    '<center><img src="'+ imagem + '" alt="Quantidade de empresas" style="max-width: 600px;display:block; border:none; padding:none; margin:none; "></center>'+
+                '</td>'+
+                 '<td width="19" height="374"></td>'+
+            '</table>';
 }
-function Text(titulo, texto, imagem){
+function RenderText(titulo, texto, imagem){
     //FUNCAO RENDERIZA E RETORNA AS TABELAS JA FEITAS
     return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">'+
     '<tr>'+
@@ -51,16 +49,24 @@ $.ajax({
         while (i < data['results'].length){
 
             //DEFINE AS VARIAVEIS
-            if(data['results'][i]['Imagem'] != 'nulo'){ var imagem = Imagem(data['results'][i]['Imagem']);}else{var imagem = '';}
-            var tabelas = Text(data['results'][i]['Titulo'], data['results'][i]['Texto'].replace(/\n/g, '<br>'), imagem);
+            if(data['results'][i]['Imagem'] != 'nulo'){ var imagem = RenderImagem(data['results'][i]['Imagem']);}else{var imagem = '';}
+            var tabelas = RenderText(data['results'][i]['Titulo'], data['results'][i]['Texto'].replace(/\n/g, '<br>'), imagem);
             
             //GERA AS TABELAS
             $('gerador').append(tabelas);
             //CONTADOR
             i++;
         }
-
-        download(document.body.outerHTML, "Estudo.html", "text/html");
-        
     }
+});
+
+$(document).ready(function() {
+$('.baixar').click(function () {
+
+    var d = new Date();
+    var name = d.getFullYear() + '-' + d.getDate() + '-' + d.getDate() + '-' + 'estudo';
+    
+    var body = document.getElementById("email");
+    download(body.outerHTML, name + ".html", "text/html");
+});
 });
