@@ -1,4 +1,49 @@
-@media screen and (min-width: $xs) {}
+@media screen and (min-width: $xs) {
+    button {
+        border: 0!important;
+    }
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    legend {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .upper {
+        text-transform: uppercase;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .login {
+        .row {
+            height: 100vh;
+        }
+    }
+    .btn-purple {
+        &:hover {
+            background-color: #00000045 !important;
+        }
+    }
+    .painel {
+        min-height: 100vh;
+    }
+    .box {
+        height: 300px;
+        background: white;
+        border-radius: 5px;
+        margin-top: 32px;
+    }
+}
 
 @media screen and (min-width: $sm) {}
 

@@ -1,20 +1,16 @@
+$purpledark: #6c5ce7;
+$purple: #7b88ff;
+$yellowdark: #fdcb6e;
+$yellow: #fff3b1;
+$black: #000;
 $white: #fff;
-$grey: #292929;
-$blue: #0c3446;
-$yellow: #F2E876;
-$lightgrey: #E0E0E0;
-$greybg: #E5E5E5;
-
 $xl: 1200px;
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
 $xs: 0px;
-
-
 //FONTE
 @import url('https://fonts.googleapis.com/css?family=Barlow:400,500,600');
-
-$font: 'Barlow', sans-serif;
-
+$font: 'Barlow',
+sans-serif;
 $transition: .35s ease-in-out;
