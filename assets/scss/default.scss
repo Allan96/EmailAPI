@@ -24,6 +24,21 @@
     .bold {
         font-weight: bold;
     }
+    .erro {
+        background: #fdcb6e;
+        color: white;
+        text-align: center;
+        padding: 10px 0px;
+        position: absolute;
+        width: 100%;
+        transition: .5s;
+        span {
+            float: right;
+            margin-right: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
     .login {
         .row {
             height: 100vh;
