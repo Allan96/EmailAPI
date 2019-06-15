@@ -10,9 +10,7 @@ class EmailAPI{
         }
     }
     public static function estaLogado(){
-        if(self::Logado()){
-        }
-        else{
+        if(!self::Logado()){
             header("Location: ./index.php"); 
         }
 
@@ -47,6 +45,24 @@ class EmailAPI{
         }
     }
 
+    public static function MostraCards(){
+        global $conexao;
+        $SelectCard = $conexao->prepare('SELECT * FROM tiposdeemail');
+        $SelectCard->execute();
+        // echo $SelectCard->RowCount();
+        $data = $SelectCard->fetchAll();
+
+        foreach($data as $row) {
+             echo 
+             '<div class="col-6 col-lg-3 card-' . $row['id'] . '">
+             <div class="box d-flex justify-content-center align-items-center">
+             <span class="upper bold c-purpledark">'. $row['nome'] .'</span>
+             </div>
+         </div>';
+            
+            
+        }
+    }
 
 }
 ?>
