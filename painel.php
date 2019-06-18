@@ -8,4 +8,8 @@
 
     </section>
 
+    <div id="modalEmail">
+        
+    </div>
+
 <?php include('./includes/footer.php'); ?>

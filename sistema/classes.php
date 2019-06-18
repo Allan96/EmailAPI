@@ -1,5 +1,5 @@
 <?php
-include('/config.php');
+include('config.php');
 class EmailAPI{
     function Logado(){
         if(isset($_SESSION['logado']) == true){
@@ -49,12 +49,11 @@ class EmailAPI{
         global $conexao;
         $SelectCard = $conexao->prepare('SELECT * FROM tiposdeemail');
         $SelectCard->execute();
-        // echo $SelectCard->RowCount();
         $data = $SelectCard->fetchAll();
 
         foreach($data as $row) {
              echo 
-             '<div class="col-6 col-lg-3 card-' . $row['id'] . '">
+             '<div class="col-6 col-lg-3 card-' . $row['id'] . '  fadeInUp animated">
              <div class="box d-flex justify-content-center align-items-center">
              <span class="upper bold c-purpledark">'. $row['nome'] .'</span>
              </div>

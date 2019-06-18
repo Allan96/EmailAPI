@@ -1,27 +1,4 @@
-<!-- SISTEMA FEITO POR ALLAN SOUZA
-DESENVOLVEDOR FULL STACK -->
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Gerador de Estudos - [BETA]</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark mb-5" style="background-color: black;">
-        <div class="container">
-            <a class="navbar-brand" href="#">Estudos API</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-        </div>
-    </nav>
-
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-8">
 
@@ -136,24 +113,16 @@ DESENVOLVEDOR FULL STACK -->
 
             <div class="col-4">
                 <p>
-                    <b>Todo o texto é gerado numa planilha de excel, acesse o link abaixo para abrir a planilha!</b>
+                <button type="button" class="btn btn-primary baixar mb-2 upper bgc-purple bdc-purple bold c-white w-100 py-3 btn-purple">Download do Estudo</button>
                     <br>
                     <a href="https://docs.google.com/spreadsheets/d/1SK4NJIpVlqIHxY2Jivpf1aDuVdJsiguS1AJiFlDWs4U/edit#gid=0" target="_blank">
-                            Clique aqui para editar a planilha!
+                    <button type="button" class="btn btn-primary upper bgc-purple bdc-purple bold c-white w-100 py-3 btn-purple mt-3"> Clique aqui para editar a planilha!</button>
                     </a>
-                    <br><br>
-                    <b>Estudo gerado! </b><br> Caso você queira baixar clique no botão abaixo
                 </p>
-                <br>
-                <button type="button" class="btn btn-primary baixar mb-5 w-100">Download do Estudo</button>
-                <hr>
-                <div class="form-group mt-5">
-                    <label for="">Envie um e-mail de teste</label>
+                <!-- <div class="form-group mt-5">
                     <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Insira o seu e-mail">
-                    <small id="helpId" class="form-text text-muted">Insira o seu e-mail, para enviarmos o teste.</small>
-                    <br>
-                    <button type="button" class="btn btn-primary w-100">Enviar teste</button>
-                </div>
+                    <button type="button" class="btn btn-primary upper bgc-purple bdc-purple bold c-white w-100 py-3 btn-purple mt-3">Enviar teste</button>
+                </div> -->
             </div>
         </div>
     </div>
@@ -164,7 +133,6 @@ DESENVOLVEDOR FULL STACK -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="./assets/js/download.js"></script>
     <script src="./assets/js/main.js?500"></script>
 </body>
 
