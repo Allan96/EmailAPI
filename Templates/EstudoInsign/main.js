@@ -8,7 +8,7 @@ function RenderImagem(imagem) {
     return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">' +
     '<td width="19"></td>' +
         '<td width="600">' +
-        '<center><img src="' + imagem + '" alt="Quantidade de empresas" style="max-width: 570px;display:block; border:none; padding:none; margin:none; "></center> <br>' +
+        '<center><img src="' + imagem + '" alt="" style="max-width: 570px;display:block; border:none; padding:none; margin:none; "></center> <br>' +
         '</td>' +
         '<td width="19"></td>' +
         '</table>';
