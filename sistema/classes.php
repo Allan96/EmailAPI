@@ -53,11 +53,11 @@ class EmailAPI{
 
         foreach($data as $row) {
              echo 
-             '<div class="col-6 col-lg-3 card-' . $row['id'] . '  fadeInUp animated">
+             '<a class="col-6 col-lg-3 card-' . $row['id'] . '  fadeInUp animated" href="'. $row['link'] .'">
              <div class="box d-flex justify-content-center align-items-center">
              <span class="upper bold c-purpledark">'. $row['nome'] .'</span>
              </div>
-         </div>';
+         </a>';
             
             
         }

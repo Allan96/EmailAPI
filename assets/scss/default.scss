@@ -51,6 +51,11 @@
     }
     .painel {
         min-height: 100vh;
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+        }
     }
     .box {
         height: 150px;

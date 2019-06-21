@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 15-Jun-2019 às 04:19
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 5.6.39
+-- Host: localhost
+-- Generation Time: 21-Jun-2019 às 22:27
+-- Versão do servidor: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `emailapi`
+-- Database: `emailAPI`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tiposdeemail`
+--
+
+CREATE TABLE `tiposdeemail` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tiposdeemail`
+--
+
+INSERT INTO `tiposdeemail` (`id`, `nome`, `link`) VALUES
+(1, 'Estudo Insign', './templates/EstudoInsign/'),
+(2, 'Estudos Value\r\n', ''),
+(3, 'BPP', ''),
+(4, 'Confidence', ''),
+(5, 'Landscape', ''),
+(6, 'Economatica - Mensal', '');
 
 -- --------------------------------------------------------
 
@@ -39,11 +63,18 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
-(2, 'Allan', 'allan10');
+(2, 'Allan', 'allan10'),
+(3, 'ValVal', '123456');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tiposdeemail`
+--
+ALTER TABLE `tiposdeemail`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `usuarios`
@@ -56,10 +87,16 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `tiposdeemail`
+--
+ALTER TABLE `tiposdeemail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
