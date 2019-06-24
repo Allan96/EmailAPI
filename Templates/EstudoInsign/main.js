@@ -6,7 +6,7 @@ function TypeChange(type, id) {
 
 function RenderImagem(imagem) {
     return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">' +
-    '<td width="19"></td>' +
+        '<td width="19"></td>' +
         '<td width="600">' +
         '<center><img src="' + imagem + '" alt="" style="max-width: 570px;display:block; border:none; padding:none; margin:none; "></center> <br>' +
         '</td>' +
@@ -65,7 +65,7 @@ function TextFooter(textfinal) {
 
 $('#AddInput').click(function(e) {
 
-    $('#FormSerialize').append('<div class="input-group mb-3"><div class="input-group-prepend"><select class="custom-select" id="inputGroupSelect01" id="' + i + '" onchange="TypeChange(this.value, ' + i + ');"<option selected>Titulo</option><option value="Texto">Texto</option><option value="Imagem">Imagem</option><option value="Titulo">Titulo</option><option value="Link">Botao com Link</option><option value="TFooter">Texto Footer</option></select></div><textarea type="text" class="form-control" id="' + i + '" name="Texto"></textarea></div>');
+    $('#FormSerialize').append('<div class="input-group mb-3"><div class="input-group-prepend"><select class="custom-select" id="inputGroupSelect01" id="' + i + '" onchange="TypeChange(this.value, ' + i + ');"<option selected>Titulo</option><option value="Texto">Texto</option><option value="Imagem">Imagem</option><option value="Titulo">Titulo</option><option value="Link">Botao</option><option value="TFooter">Texto Footer</option></select></div><textarea type="text" class="form-control" id="' + i + '" name="Texto" style="height: 38px;"></textarea></div>');
     i++;
 
 });
@@ -82,11 +82,9 @@ $("#FormSerialize").submit(function(event) {
             var tabelas = RenderTexto(data[Cont]["value"].replace(/\n/g, '<br>'));
         } else if (data[Cont]["name"] == 'Imagem') {
             var tabelas = RenderImagem(data[Cont]["value"]);
-        }
-        else if (data[Cont]["name"] == 'Link') {
+        } else if (data[Cont]["name"] == 'Link') {
             var tabelas = RenderLink(data[Cont]["value"]);
-        }
-        else if (data[Cont]["name"] == 'TFooter') {
+        } else if (data[Cont]["name"] == 'TFooter') {
             var tabelas = TextFooter(data[Cont]["value"].replace(/info@economatica.com.br/g, '<a href="mailto:info@economatica.com.br" target="_blank">info@economatica.com.br</a>'));
         }
         $('gerador').append(tabelas);
@@ -106,4 +104,3 @@ $('.baixar').click(function() {
     var body = document.getElementById("email");
     download(body.outerHTML, name + ".html", "text/html");
 });
-
