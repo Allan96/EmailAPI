@@ -85,9 +85,9 @@ $("#FormSerialize").submit(function(event) {
         } else if (data[Cont]["name"] == 'Link') {
             var tabelas = RenderLink(data[Cont]["value"]);
         } else if (data[Cont]["name"] == 'TFooter') {
-            var tabelas = TextFooter(data[Cont]["value"].replace(/info@economatica.com.br/g, '<a href="mailto:info@economatica.com.br" target="_blank">info@economatica.com.br</a>'));
+            var tabelas = TextFooter(data[Cont]["value"]);
         }
-        $('gerador').append(tabelas);
+        $('gerador').append(tabelas.replace(/info@economatica.com.br/g, '<a href="mailto:info@economatica.com.br" target="_blank">info@economatica.com.br</a>'));
 
         Cont++;
     }
