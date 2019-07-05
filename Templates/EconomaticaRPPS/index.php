@@ -35,7 +35,7 @@
       </nav>
       <div class="container mt-5">
          <div class="row">
-            <div class="col-7">
+            <div class="col-8">
                <div bgcolor="#fbfbfb" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email">
                   <head>
                      <title> Economatica
@@ -106,7 +106,7 @@
                   </table>
                </div>
             </div>
-            <div class="col-5">
+            <div class="col-4">
                <form id="FormSerialize">
                   <div class="container">
                      <div class="row">
