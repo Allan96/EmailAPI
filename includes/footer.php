@@ -8,4 +8,4 @@
     <script src="./assets/js/main.js?500"></script>
 </body>
 
-</html
+</html>

@@ -1,7 +1,7 @@
 {
-  "name": "sportz",
+  "name": "EmailAPI",
   "version": "1.0.0",
-  "description": "Site Sportz",
+  "description": "Site EmailAPI",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

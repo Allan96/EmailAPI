@@ -1,4 +1,4 @@
-<section class="painel bgc-purpledark">
+<section class="painel">
    <?php include('./includes/header.php'); ?>
    <div class="container">
       <div class="row">
@@ -7,3 +7,5 @@
    </div>
 </section>
 <?php include('./includes/footer.php'); ?>
+
+          <?php EmailAPI::App(); ?>

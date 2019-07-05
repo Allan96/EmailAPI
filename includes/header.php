@@ -16,7 +16,7 @@ EmailAPI::estaLogado();
     <link rel="stylesheet" href="./assets/css/main.css?<?php echo date('sDmHh'); ?>">
 
 </head>
-<body>
+<body class="bgc-purpledark">
 <nav class="navbar navbar-expand-sm navbar-dark bgc-purpledark">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="./assets/img/icons/icon_email.svg" alt="" width="32"></a>
