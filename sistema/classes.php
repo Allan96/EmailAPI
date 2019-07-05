@@ -47,20 +47,19 @@ class EmailAPI{
 
     public static function MostraCards(){
         global $conexao;
-        //  pega a quantidade de clientes
         $NumerodeUsuarios = $conexao->prepare('SELECT * FROM clientes');
         $NumerodeUsuarios->execute();
         $clientes = $NumerodeUsuarios->fetchAll();
         foreach($clientes as $rowC) {
+
             echo '<h2 class="col-12 mt-3 c-white fadeInUp animated upper bold">'.$rowC['nome'] .'</h2>';
+
             $SelectCard = $conexao->prepare('SELECT * FROM tiposdeemail WHERE cliente = :clienteT');
             $SelectCard->bindParam(':clienteT', $rowC['nome']);
             $SelectCard->execute();
             $data = $SelectCard->fetchAll();
-
             foreach($data as $row) {
-                echo 
-                '<a class="col-6 col-lg-3 card-' . $row['id'] . '  fadeInUp animated" href="'. $row['link'] .'">
+                echo '<a class="col-6 col-lg-3 card-' . $row['id'] . '  fadeInUp animated" href="'. $row['link'] .'">
                 <div class="box d-flex justify-content-center align-items-center">
                 <span class="upper bold c-purpledark">'. $row['nome'] .'</span>
                 </div>
