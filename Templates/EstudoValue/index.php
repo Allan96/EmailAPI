@@ -186,7 +186,7 @@ EmailAPI::estaLogado();
    
 </div>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="./main.js?t"></script>
+<script src="./main.js?t1"></script>
 <script src="../../assets/js/download.js?t"></script>
 
 
