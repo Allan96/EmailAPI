@@ -15,11 +15,11 @@ function RenderImagem(imagem) {
 }
 
 function RenderTitutlo(value) {
-    return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40" height="2"></td><td width="100" height="2"><img width="100" height="2" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/line.png" alt="" style="display:block; border:none; padding:none; margin:none;"></td><td width="460" height="20"></td></tr></tbody></table><table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;"><b>' + value + '</b></font> </td><td width="40"></td></tr></tbody></table>';
+    return '<table width="600"cellspacing="0" id="titulo"  cellpadding="0" border="0" align="center"><tbody><tr><td width="40" height="2"></td><td width="100" height="2"><img width="100" height="2" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/line.png" alt="" style="display:block; border:none; padding:none; margin:none;"></td><td width="460" height="20"></td></tr></tbody></table><table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"  class="titulo" ><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;"><div class="titulo"> <b>' + value + '</b> </div></font> </td><td width="40"></td></tr></tbody></table>';
 }
 
 function RenderTexto(value) {
-    return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"><br><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 13px; color: #4a4a4a; line-height: 1.69; text-decoration: none; ">' + value + '</font> <br><br></td><td width="40"></td></tr></tbody></table>'
+    return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"><br><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 13px; color: #4a4a4a; line-height: 1.69; text-decoration: none; "><div class="texto">' + value + '</div></font> <br><br></td><td width="40"></td></tr></tbody></table>'
 }
 
 function RenderLink(linkpost) {
@@ -91,8 +91,14 @@ $("#FormSerialize").submit(function(event) {
 
         Cont++;
     }
-
-
+    tinymce.init({
+        selector: '.titulo',
+        inline: true
+    });
+    tinymce.init({
+        selector: '.texto',
+        inline: true
+    });
     console.log(data);
 });
 

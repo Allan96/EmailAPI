@@ -13,10 +13,11 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
       <link rel="stylesheet" href="../../assets/css/main.css?<?php echo date('sDmHh'); ?>">
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
    </head>
    <body>
       <nav class="navbar navbar-expand-sm navbar-dark bgc-purpledark">
-         <div class="container">
+         <div class="container-fluid">
             <a class="navbar-brand" href="../../"><img src="../../assets/img/icons/icon_email.svg" alt="" width="32"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -33,7 +34,7 @@
             </div>
          </div>
       </nav>
-      <div class="container mt-5">
+      <div class="container-fluid mt-5">
          <div class="row">
             <div class="col-7">
                <div bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email">
@@ -169,7 +170,7 @@
          </div>
       </div>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="./main.js?t"></script>
+      <script src="./main.js?<?php echo date('sDmHh'); ?>"></script>
       <script src="../../assets/js/download.js?t"></script>
    </body>
 </html>
