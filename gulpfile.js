@@ -1,23 +1,23 @@
 const gulp = require('gulp');
-const sass = require ('gulp-sass');
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
 
 function compilaSass() {
     return gulp
-    .src('assets/scss/main.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(gulp.dest('assets/css'))
-    .pipe(browserSync.stream()); // atualiza os arquivos, sem que seja necessário um reload do browser
+        .src('assets/scss/main.scss')
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('assets/css'))
+        .pipe(browserSync.stream()); // atualiza os arquivos, sem que seja necessário um reload do browser
 }
 
 // Função para iniciar o browser
-function browser(){
+function browser() {
     browserSync.init({
         server: {
             baseDir: "./"
