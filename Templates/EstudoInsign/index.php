@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
       <link rel="stylesheet" href="../../assets/css/main.css?<?php echo date('sDmHh'); ?>">
-      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+      <script src="https://cdn.tiny.cloud/1/6l34p72f1whv5p6ebtaxf93wi7z41vndv3c1razr34mknojl/tinymce/5/tinymce.min.js"></script>
    </head>
    <body>
       <nav class="navbar navbar-expand-sm navbar-dark bgc-purpledark">
@@ -37,6 +37,11 @@
       <div class="container-fluid mt-5">
          <div class="row">
             <div class="col-7">
+            <style>
+img{
+   max-width: 100%;
+}
+</style>
                <div bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email">
                   <!-- HTML 4 -->
                   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

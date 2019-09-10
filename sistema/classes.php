@@ -35,7 +35,9 @@ class EmailAPI{
             $LogindoUsuario->bindParam(':nomePOST', $_POST['usuario']);
             $LogindoUsuario->bindParam(':senhaPOST', $_POST['senha']);
             $LogindoUsuario->execute();
+            $row = $LogindoUsuario->fetchAll();
             if($LogindoUsuario->RowCount() >= 1){
+                $_SESSION['usuario'] = $_POST['usuario'];
                 $_SESSION['logado'] = true;
                 header("Location: ./painel.php"); 
             }
@@ -67,6 +69,33 @@ class EmailAPI{
             }
         }
     }
+
+    public static function Usuario($row){
+        global $conexao;
+        $user = $conexao->prepare('SELECT * FROM usuarios WHERE usuario = :nome');
+        $user->bindParam(':nome', $row);
+        $user->execute();
+        $row = $user->fetch();
+
+        if($row['clientes'] == '0'){
+            self::MostraCards();
+        }
+        else{
+            $SelectCard = $conexao->prepare('SELECT * FROM tiposdeemail WHERE cliente = :clienteT');
+            $SelectCard->bindParam(':clienteT', $row['clientes']);
+            $SelectCard->execute();
+            $data = $SelectCard->fetchAll();
+            foreach($data as $rowD) {
+                echo '<a class="col-6 col-lg-3 card-' . $rowD['id'] . '  fadeInUp animated" href="'. $rowD['link'] .'">
+                <div class="box d-flex justify-content-center align-items-center">
+                <span class="upper bold c-purpledark">'. $rowD['nome'] .'</span>
+                </div>
+            </a>';
+            }
+        }
+       
+    }
+
 
 }
 ?>

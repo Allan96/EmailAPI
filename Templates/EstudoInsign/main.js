@@ -8,14 +8,14 @@ function RenderImagem(imagem) {
     return '<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">' +
         '<td width="19"></td>' +
         '<td width="600">' +
-        '<center><img src="' + imagem + '" alt="" style="max-width: 570px;display:block; border:none; padding:none; margin:none; "></center> <br>' +
+        '<center><img src="' + imagem + '" alt="" style="max-width: 550px;display:block; border:none; padding:none; margin:none; "></center> <br>' +
         '</td>' +
         '<td width="19"></td>' +
         '</table>';
 }
 
 function RenderTitutlo(value) {
-    return '<table width="600"cellspacing="0" id="titulo"  cellpadding="0" border="0" align="center"><tbody><tr><td width="40" height="2"></td><td width="100" height="2"><img width="100" height="2" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/line.png" alt="" style="display:block; border:none; padding:none; margin:none;"></td><td width="460" height="20"></td></tr></tbody></table><table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"  class="titulo" ><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;"><div class="titulo"> <b>' + value + '</b> </div></font> </td><td width="40"></td></tr></tbody></table>';
+    return '<table width="550"cellspacing="0" id="titulo"  cellpadding="0" border="0" align="center"  style="max-width: 550px;"><tbody><tr><td width="40" height="2"></td><td width="100" height="2"><img width="100" height="2" src="http://martinluz.com/clientes/economatica/emkt/20190429-estudo/images/line.png" alt="" style="display:block; border:none; padding:none; margin:none;"></td><td width="460" height="20"></td></tr></tbody></table><table width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr><td width="40"></td><td width="520"  class="titulo" ><font style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva; font-size: 18px; color: #4a4a4a; line-height: 1.5; text-decoration: none;"><div class="titulo"> <b>' + value + '</b> </div></font> </td><td width="40"></td></tr></tbody></table>';
 }
 
 function RenderTexto(value) {
@@ -108,5 +108,5 @@ $('.baixar').click(function() {
     var name = d.getFullYear() + '-' + d.getDate() + '-' + d.getDate() + '-' + 'estudo';
 
     var body = document.getElementById("email");
-    download(body.outerHTML, name + ".html", "text/html");
+    download(body.outerHTML.replace(/contenteditable="true"/g, 'a').replace(/<img/g, '<img style="max-width: 100%;"'), name + ".html", "text/html");
 });
