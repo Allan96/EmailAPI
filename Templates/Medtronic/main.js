@@ -37,7 +37,7 @@ function AdicionaInputs() {
                 <div id="collapse${i}" class="collapse" aria-labelledby="${i}" data-parent="#accordion">
                     <div class="card-body">
                         <div class="form-group">
-                            <select class="form-control" name="header-text" id="tipo-${i}">
+                            <select class="form-control" name="header-text" id="tipo-${i}" onchange="onchangeType(this.value, ${i})">
                                 <option value="text">Texto</option>
                                 <option value="header">Header</option>
                             </select>
@@ -63,14 +63,14 @@ function AdicionaTable() {
         <table width="550" cellspacing="0" cellpadding="0" border="0" align="center" id="tableId-${i}">
             <tbody>
                 <tr>
-                <td><img src="" style="max-width: 178px;padding-right: 15px;" class="imagem-${i}-1"> </td>
-                <td width="40"></td>
+                <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${i}-1"> </td>
+                <td width="10"></td>
                 <td style="max-width: 520px;word-break: break-word;">
-                    <div class="texto" style="width: 520px;">TextoBase</div>
+                    <div class="texto">TextoBase</div>
                 </td>
-                <td width="40" class="ultimo"></td>
-                <td>
-                    <img src="" style="max-width: 178px;padding-left: 15px;" class="imagem-${i}-2"> </td>
+                <td width="10" class="ultimo"></td>
+                <td align="right">
+                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0;" class="imagem-${i}-2"> </td>
                 </tr>
             </tbody>
         </table>`
@@ -79,13 +79,19 @@ function AdicionaTable() {
 
 function onchangeImage(value, id) {
     var oldId = id - 1;
-    if (id === 0) {
-        $('.imagem-' + id + '-1').attr('src', value);
-    } else if ($('.imagem-' + oldId + '-1').attr('src').length > 0) {
-        $('.imagem-' + id + '-2').attr('src', value);
-    } else if ($('.imagem-' + oldId + '-2').attr('src').length > 0) {
-        $('.imagem-' + id + '-1').attr('src', value);
+    if ($('#tipo-' + id).val() == 'text') {
+        if (id === 0 || $('.imagem-' + oldId + '-1').attr('src') == undefined) {
+            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
+        } else if ($('.imagem-' + oldId + '-1').attr('src').length > 0) {
+            $('.imagem-' + id + '-2').attr('src', value).css('opacity', '1');
+        } else if ($('.imagem-' + oldId + '-2').attr('src').length > 0) {
+            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
+        }
+    } else if ($('#tipo-' + id).val() == 'header') {
+        $('.header-' + id).attr('src', value);
+
     }
+
     console.log('foii');
 }
 
@@ -97,6 +103,40 @@ function onchangeCor(value, id) {
     $('#' + table).css('background', value);
 
 }
+
+function onchangeType(value, id) {
+    if (value === 'text') {
+        $('#cor-' + id).show();
+        $('#botao-' + id).show();
+        $('#tableId-' + id).html(
+            `<tbody>
+                <tr>
+                <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${id}-1"> </td>
+                <td width="20"></td>
+                <td style="max-width: 520px;word-break: break-word;">
+                    <div class="texto mce-content-body" style="position: relative;" id="mce_0" contenteditable="true" spellcheck="false"><p><span class="mce-spellchecker-word" aria-invalid="spelling" data-mce-bogus="1" data-mce-word="TextoBase" data-mce-index="0">TextoBase</span></p></div>
+                </td>
+                <td width="20" class="ultimo"></td>
+                <td align="right">
+                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0; class="imagem-${id}-2"> </td>
+                </tr>
+            </tbody>
+            `
+        );
+    } else if (value === 'header') {
+        $('#cor-' + id).hide();
+        $('#botao-' + id).hide();
+        $('#tableId-' + id).html(
+            `<tbody>
+                <tr>
+                <td><img src="" style="max-width: 550px; width: 550px;" class="header-${id} imagem-${i}-2"> </td>
+                </tr>
+            </tbody>
+            `
+        );
+    }
+}
+
 $(document).ready(function() {
     $('#AddInput').click(function(e) {
         e.preventDefault();
