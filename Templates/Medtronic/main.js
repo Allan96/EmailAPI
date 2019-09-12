@@ -49,7 +49,7 @@ function AdicionaInputs() {
                             <input type="color" class="form-control" name="cor" id="cor-${i}" table-src="tableId-${i}" placeholder="Cor" onchange="onchangeCor(this.value, this.id)">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="botao" id="botao-${i}" placeholder="Link do botão">
+                            <input type="text" class="form-control" name="botao" id="botao-${i}" placeholder="Link do botão" onchange="onchangeButton(this.value, ${i})">
                         </div>
                     </div>
                 </div>
@@ -59,14 +59,13 @@ function AdicionaInputs() {
 
 function AdicionaTable() {
     return (
-        `
-        <table width="550" cellspacing="0" cellpadding="0" border="0" align="center" id="tableId-${i}">
+        `<table width="550" cellspacing="0" cellpadding="0" border="0" align="center" id="tableId-${i}">
             <tbody>
                 <tr>
                 <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${i}-1"> </td>
                 <td width="10"></td>
                 <td style="max-width: 520px;word-break: break-word;">
-                    <div class="texto">TextoBase</div>
+                    <div class="texto text-${i}">TextoBase</div>
                 </td>
                 <td width="10" class="ultimo"></td>
                 <td align="right">
@@ -75,33 +74,6 @@ function AdicionaTable() {
             </tbody>
         </table>`
     );
-}
-
-function onchangeImage(value, id) {
-    var oldId = id - 1;
-    if ($('#tipo-' + id).val() == 'text') {
-        if (id === 0 || $('.imagem-' + oldId + '-1').attr('src') == undefined) {
-            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
-        } else if ($('.imagem-' + oldId + '-1').attr('src').length > 0) {
-            $('.imagem-' + id + '-2').attr('src', value).css('opacity', '1');
-        } else if ($('.imagem-' + oldId + '-2').attr('src').length > 0) {
-            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
-        }
-    } else if ($('#tipo-' + id).val() == 'header') {
-        $('.header-' + id).attr('src', value);
-
-    }
-
-    console.log('foii');
-}
-
-function onchangeCor(value, id) {
-
-    console.log($('#' + id).attr('table-src'));
-    var table = $('#' + id).attr('table-src');
-
-    $('#' + table).css('background', value);
-
 }
 
 function onchangeType(value, id) {
@@ -114,7 +86,7 @@ function onchangeType(value, id) {
                 <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${id}-1"> </td>
                 <td width="20"></td>
                 <td style="max-width: 520px;word-break: break-word;">
-                    <div class="texto mce-content-body" style="position: relative;" id="mce_0" contenteditable="true" spellcheck="false"><p><span class="mce-spellchecker-word" aria-invalid="spelling" data-mce-bogus="1" data-mce-word="TextoBase" data-mce-index="0">TextoBase</span></p></div>
+                    <div class="texto text-${i}" style="position: relative;" id="mce_0" contenteditable="true" spellcheck="false"><p><span class="mce-spellchecker-word" aria-invalid="spelling" data-mce-bogus="1" data-mce-word="TextoBase" data-mce-index="0">TextoBase</span></p></div>
                 </td>
                 <td width="20" class="ultimo"></td>
                 <td align="right">
@@ -134,6 +106,40 @@ function onchangeType(value, id) {
             </tbody>
             `
         );
+    }
+}
+
+function onchangeImage(value, id) {
+    var oldId = id - 1;
+    if ($('#tipo-' + id).val() == 'text') {
+        if (id === 0 || $('.imagem-' + oldId + '-1').attr('src') == undefined) {
+            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
+        } else if ($('.imagem-' + oldId + '-1').attr('src').length > 0) {
+            $('.imagem-' + id + '-2').attr('src', value).css('opacity', '1');
+        } else if ($('.imagem-' + oldId + '-2').attr('src').length > 0) {
+            $('.imagem-' + id + '-1').attr('src', value).css('opacity', '1');
+        }
+    } else if ($('#tipo-' + id).val() == 'header') {
+        $('.header-' + id).attr('src', value);
+
+    }
+}
+
+function onchangeCor(value, id) {
+
+    console.log($('#' + id).attr('table-src'));
+    var table = $('#' + id).attr('table-src');
+
+    $('#' + table).css('background', value);
+
+}
+
+function onchangeButton(value, id) {
+    if (value.length > 0) {
+        $('.text-' + id).append('<a href="" target="_blank" class="button"><img src="http://martinluz.com/clientes/medtronic/emkt/20190401-conne/images/02.jpg" width="202" height="54" alt="degrade" style="display:block; border:none; padding:none; margin:none;"></a>')
+        console.log(id);
+    } else {
+        console.log('bbbbbb');
     }
 }
 

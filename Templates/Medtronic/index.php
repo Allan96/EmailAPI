@@ -56,12 +56,6 @@
                                     <gerador width="550">
                                     </gerador>
                                     <!-- GERAR EMAIL -->
-                                    <table width="550" cellspacing="0" cellpadding="0" border="0" align="center">
-                                        <tr>
-                                            <td width="550" height="70">
-                                            </td>
-                                        </tr>
-                                    </table>
 
 
                                 </td>
