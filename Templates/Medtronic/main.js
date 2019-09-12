@@ -135,12 +135,10 @@ function onchangeCor(value, id) {
 }
 
 function onchangeButton(value, id) {
+    $('.buttonComponent-' + id).remove();
     if (value.length > 0) {
-        $('.text-' + id).append('<a href="" target="_blank" class="button"><img src="http://martinluz.com/clientes/medtronic/emkt/20190401-conne/images/02.jpg" width="202" height="54" alt="degrade" style="display:block; border:none; padding:none; margin:none;"></a>')
-        console.log(id);
-    } else {
-        console.log('bbbbbb');
-    }
+        $('.text-' + id).append(`<a href="" target="_blank" class="buttonComponent-${id}"><img src="http://martinluz.com/clientes/medtronic/emkt/20190401-conne/images/02.jpg" width="202" height="54" alt="degrade" style="display:block; border:none; padding:none; margin:none;"></a>`);
+    } else {}
 }
 
 $(document).ready(function() {
