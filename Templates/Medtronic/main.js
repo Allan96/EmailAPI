@@ -1,4 +1,5 @@
 var i = 0;
+var clone = 1;
 
 function AdicionaEditor() {
     tinymce.init({
@@ -28,11 +29,18 @@ function AdicionaEditor() {
 function AdicionaInputs() {
     return (
         `
-        <div class="card">
-                <div class="card-header" id="${i}">
+        <div class="card clone-${clone}" id="${i}">
+                <div class="card-header" >
                     <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">Tabela ${i}</button>
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">Tabela </button>
                     </h2>
+                    <div onclick="deleteItem(${i})"> 
+                    <img src="../../assets/img/icons/delete.svg" alt="">
+                    </div>
+                    <div onclick="cloneItem(${clone})"> 
+                    <img src="../../assets/img/icons/clone.svg" alt="">
+                    </div>
+                   
                 </div>
                 <div id="collapse${i}" class="collapse" aria-labelledby="${i}" data-parent="#accordion">
                     <div class="card-body">
@@ -59,7 +67,7 @@ function AdicionaInputs() {
 
 function AdicionaTable() {
     return (
-        `<table width="550" cellspacing="0" cellpadding="0" border="0" align="center" id="tableId-${i}">
+        `<table width="550" cellspacing="0" border="0" cellpadding="0" class="cloneTable-${clone}" border="0" align="center" id="tableId-${i}">
             <tbody>
                 <tr>
                 <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${i}-1"> </td>
@@ -76,6 +84,22 @@ function AdicionaTable() {
     );
 }
 
+function deleteItem(i) {
+    console.log(i);
+    $('#tableId-' + i).remove();
+    $('#' + i).remove();
+}
+
+function cloneItem(value) {
+    clone++;
+    var cloneTable = $('.cloneTable-' + value).clone();
+    var cloneCard = $('.clone-' + value).clone();
+
+    $('#accordion').append(cloneCard.attr('class', 'card clone-' + clone));
+    $('gerador').append(cloneTable.attr('class', 'cloneTable-' + clone));
+
+}
+
 function onchangeType(value, id) {
     if (value === 'text') {
         $('#cor-' + id).show();
@@ -83,14 +107,14 @@ function onchangeType(value, id) {
         $('#tableId-' + id).html(
             `<tbody>
                 <tr>
-                <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${id}-1"> </td>
+                <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0; display:block;" class="imagem-${id}-1"> </td>
                 <td width="20"></td>
                 <td style="max-width: 520px;word-break: break-word;">
                     <div class="texto text-${i}" style="position: relative;" id="mce_0" contenteditable="true" spellcheck="false"><p><span class="mce-spellchecker-word" aria-invalid="spelling" data-mce-bogus="1" data-mce-word="TextoBase" data-mce-index="0">TextoBase</span></p></div>
                 </td>
                 <td width="20" class="ultimo"></td>
                 <td align="right">
-                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0; class="imagem-${id}-2"> </td>
+                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0;display:block;" class="imagem-${id}-2"> </td>
                 </tr>
             </tbody>
             `
@@ -101,7 +125,7 @@ function onchangeType(value, id) {
         $('#tableId-' + id).html(
             `<tbody>
                 <tr>
-                <td><img src="" style="max-width: 550px; width: 550px;" class="header-${id} imagem-${i}-2"> </td>
+                <td><img src="" style="max-width: 550px; width: 550px;display:block;" class="header-${id} imagem-${i}-2"> </td>
                 </tr>
             </tbody>
             `
@@ -151,11 +175,9 @@ $(document).ready(function() {
         i++;
     });
 
-
-
     $('.baixar').click(function() {
         var d = new Date();
-        var name = d.getFullYear() + '-' + d.getDate() + '-' + d.getDate() + '-' + 'estudo';
+        var name = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() + '-Email';
 
         var body = document.getElementById("email");
         download(body.outerHTML.replace(/contenteditable="true"/g, 'a'), name + ".html", "text/html");

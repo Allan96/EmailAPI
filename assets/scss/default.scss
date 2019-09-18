@@ -51,8 +51,8 @@
     }
     .painel {
         min-height: 100vh;
-        a{
-            &:hover{
+        a {
+            &:hover {
                 text-decoration: none;
             }
         }
@@ -76,6 +76,17 @@
         height: 100vh;
         width: 100%;
         background: white;
+    }
+    .card-header {
+        h2 {
+            float: left;
+        }
+        img {
+            width: 20px;
+            float: right;
+            padding-top: 8px;
+            margin-right: 10px;
+        }
     }
 }
 
