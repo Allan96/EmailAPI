@@ -75,10 +75,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-3 p-1">
-                                    <button type="button" id="AddInput" class="btn btn-primary mb-2 upper bgc-purple bdc-purple bold c-white py-3 btn-purple  w-100"><img src="../../assets/img/icons/addinput.svg?5" width="20"></button>
+                                    <button type="button" id="AddInput" class="btn btn-primary mb-2 upper bgc-purple bdc-purple bold c-white py-3 btn-purple  w-100">Adicionar </button>
                                 </div>
                                 <div class="col-3 p-1">
-                                    <button type="button" class="btn btn-primary baixar mb-2 upper bgc-purple bdc-purple bold c-white py-3 btn-purple w-100"><img src="../../assets/img/icons/download.svg" alt="" width="20"></button>
+                                    <button type="button" class="btn btn-primary baixar mb-2 upper bgc-purple bdc-purple bold c-white py-3 btn-purple w-100">Download</button>
                                 </div>
                                 <div class="col-6 p-1">
                                     <iframe src="../../upload.php" frameborder="0"></iframe>
