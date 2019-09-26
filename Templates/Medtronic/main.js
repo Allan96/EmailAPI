@@ -47,6 +47,7 @@ function AdicionaInputs() {
                             <select class="form-control" name="header-text" id="tipo-${i}" onchange="onchangeType(this.value, ${i})">
                                 <option value="text">Texto</option>
                                 <option value="header">Header</option>
+                                <option value="button">Botão</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -56,8 +57,12 @@ function AdicionaInputs() {
                             <input type="color" class="form-control" name="cor" id="cor-${i}" table-src="tableId-${i}" placeholder="Cor" onchange="onchangeCor(this.value, this.id)">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="botao" id="botao-${i}" placeholder="Link do botão" onchange="onchangeButton(this.value, ${i})">
+                            <input type="text" class="form-control" name="botao" id="botao-${i}" value="https://www.medtronic.com/br-pt/index.html" placeholder="Link do botão" onchange="onchangeButton(this.value, ${i})" style="display: none">
                         </div>
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="botao" id="botaoText-${i}" placeholder="Texto do botão" value="Lorem ipsum" onchange="onchangeButtonText(this.value, ${i})" style="display: none">
+                    </div>
+                        
                     </div>
                 </div>
             </div>`
@@ -66,18 +71,19 @@ function AdicionaInputs() {
 
 function AdicionaTable() {
     return (
-        `<table width="550" cellspacing="0" border="0" cellpadding="0" class="cloneTable-${clone}" border="0" align="center" id="tableId-${i}" data-toggle="collapse" aria-controls="collapse${i}" aria-expanded="true" data-target="#collapse${i}">
+        `
+        <table width="550" cellspacing="0" border="0" cellpadding="0" class="cloneTable-${clone}" border="0" align="center" id="tableId-${i}" data-toggle="collapse" aria-controls="collapse${i}" aria-expanded="true" data-target="#collapse${i}">
             <tbody>
                 <tr>
-                <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${i}-1"> </td>
+                <td align="left" style=-><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;display: block;" class="imagem-${i}-1"> </td>
                 <td width="10"></td>
                 <td style="max-width: 520px;word-break: break-word;">
                     <div class="texto text-${i}" style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva;
-                    font-size: 18px;line-height: 1.5;text-decoration: none;">TextoBase</div>
+                    font-size: 18px;line-height: 1.2;text-decoration: none;">TextoBase</div>
                 </td>
                 <td width="10" class="ultimo"></td>
                 <td align="right">
-                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0;" class="imagem-${i}-2"> </td>
+                    <img src="none" style="max-width: 178px;padding-left: 15px;opacity: 0; display: block;" class="imagem-${i}-2"> </td>
                 </tr>
             </tbody>
         </table>`
@@ -92,18 +98,21 @@ function deleteItem(i) {
 
 function cloneItem(value) {
     clone++;
+    i++;
     var cloneTable = $('.cloneTable-' + value).clone();
     var cloneCard = $('.clone-' + value).clone();
 
     $('#accordion').append(cloneCard.attr('class', 'card clone-' + clone));
-    $('gerador').append(cloneTable.attr('class', 'cloneTable-' + clone));
+    $('gerador').append(cloneTable.attr('class', 'cloneTable-' + clone).attr('id', 'tableId-' + i).attr('aria-controls', 'collapse' + i).attr('data-target', '#collapse' + i));
 
 }
 
 function onchangeType(value, id) {
     if (value === 'text') {
         $('#cor-' + id).show();
-        $('#botao-' + id).show();
+        $('#botao-' + id).hide();
+        $('#botaoText-' + id).hide();
+        $('#imagem-' + id).show();
         $('#tableId-' + id).html(
             `<tbody>
                 <tr>
@@ -111,7 +120,8 @@ function onchangeType(value, id) {
                 <td width="20"></td>
                 <td style="max-width: 520px;word-break: break-word;">
                     <div class="texto text-${i}"style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva;
-                    font-size: 18px;line-height: 1.5;text-decoration: none;">Texto Base</div>
+                    font-size: 18px;line-height: 1.2;text-decoration: none;">Texto Base</div>
+
                 </td>
                 <td width="20" class="ultimo"></td>
                 <td align="right">
@@ -122,14 +132,44 @@ function onchangeType(value, id) {
         );
     } else if (value === 'header') {
         $('#cor-' + id).hide();
+        $('#botaoText-' + id).hide();
+        $('#imagem-' + id).show();
         $('#botao-' + id).hide();
         $('#tableId-' + id).html(
             `<tbody>
                 <tr>
-                <td><img src="" style="max-width: 550px; width: 550px;display:block;" class="header-${id} imagem-${i}-2"> </td>
+                <td><img src="" style="max-width: 550px; width: 550px;display:block;" class="header-${id} imagem-${id}-2"> </td>
                 </tr>
             </tbody>
             `
+        );
+    } else if (value === 'button') {
+        $('#cor-' + id).hide();
+        $('#imagem-' + id).hide();
+        $('#botao-' + id).show();
+        $('#botaoText-' + id).show();
+
+        $('#tableId-' + id).html(
+            `<tbody style="margin: 30px 0;"><tr>
+        <td width="24" height="58" bgcolor="#FFFFFF"></td>
+        
+
+        <td width="491" height="58" align="center" class="tableButtonInsere-${id}" style="margin: 10px 0;display: block;">
+        <a href="https://www.medtronic.com/br-pt/index.html" target="_blank" class="button buttonComponent-${id}" style="
+        text-transform: uppercase;
+        background: #009ae0;
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+        text-decoration: none!important;
+    ">Lorem ipsum</a>
+        </td>
+
+        
+        <td width="25" height="58" bgcolor="#FFFFFF"></td>
+    </tr>
+</tbody>
+        `
         );
     }
 }
@@ -162,18 +202,34 @@ function onchangeCor(value, id) {
 function onchangeButton(value, id) {
     $('.buttonComponent-' + id).remove();
     if (value.length > 0) {
-        $('.text-' + id).append(`<a href="" target="_blank" class="buttonComponent-${id}"><img src="http://martinluz.com/clientes/medtronic/emkt/20190401-conne/images/02.jpg" width="202" height="54" alt="degrade" style="display:block; border:none; padding:none; margin:none;"></a>`);
+        $('.tableButtonInsere-' + id).append(`<a href="${value}" target="_blank" class="button buttonComponent-${id}" style="
+        text-transform: uppercase;
+        background: #009ae0;
+        color: white;
+        padding: 10px 50px;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none!important;
+    "><span class="texto">Lorem ipsum </span></a>`);
+    } else {}
+}
+
+function onchangeButtonText(value, id) {
+    if (value.length > 0) {
+        $('.buttonComponent-' + id).html(value);
     } else {}
 }
 
 $(document).ready(function() {
     $('#AddInput').click(function(e) {
         e.preventDefault();
+        clone++;
         $('#accordion').append(AdicionaInputs());
         $('gerador').append(AdicionaTable());
         AdicionaEditor();
 
         i++;
+
     });
 
     $('.baixar').click(function() {
