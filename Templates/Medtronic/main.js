@@ -14,15 +14,14 @@ function AdicionaEditor() {
             'tinymcespellchecker'
         ],
         toolbar: [
-            'undo redo | bold italic underline | fontselect fontsizeselect',
-            'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+            'undo redo | bold italic underline | fontsizeselect',
+            'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent',
         ],
+        fontsize_formats: '18px',
         valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
         valid_styles: {
-            '*': 'font-size,font-family,color,text-decoration,text-align'
+            '*': 'font-size,color,text-decoration,text-align'
         },
-        powerpaste_word_import: 'clean',
-        powerpaste_html_import: 'clean'
     });
 }
 
@@ -67,13 +66,14 @@ function AdicionaInputs() {
 
 function AdicionaTable() {
     return (
-        `<table width="550" cellspacing="0" border="0" cellpadding="0" class="cloneTable-${clone}" border="0" align="center" id="tableId-${i}">
+        `<table width="550" cellspacing="0" border="0" cellpadding="0" class="cloneTable-${clone}" border="0" align="center" id="tableId-${i}" data-toggle="collapse" aria-controls="collapse${i}" aria-expanded="true" data-target="#collapse${i}">
             <tbody>
                 <tr>
                 <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0;" class="imagem-${i}-1"> </td>
                 <td width="10"></td>
                 <td style="max-width: 520px;word-break: break-word;">
-                    <div class="texto text-${i}">TextoBase</div>
+                    <div class="texto text-${i}" style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva;
+                    font-size: 18px;line-height: 1.5;text-decoration: none;">TextoBase</div>
                 </td>
                 <td width="10" class="ultimo"></td>
                 <td align="right">
@@ -110,7 +110,8 @@ function onchangeType(value, id) {
                 <td align="left"><img src="" style="max-width: 178px;padding-right: 15px;opacity: 0; display:block;" class="imagem-${id}-1"> </td>
                 <td width="20"></td>
                 <td style="max-width: 520px;word-break: break-word;">
-                    <div class="texto text-${i}" style="position: relative;" id="mce_0" contenteditable="true" spellcheck="false"><p><span class="mce-spellchecker-word" aria-invalid="spelling" data-mce-bogus="1" data-mce-word="TextoBase" data-mce-index="0">TextoBase</span></p></div>
+                    <div class="texto text-${i}"style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva;
+                    font-size: 18px;line-height: 1.5;text-decoration: none;">Texto Base</div>
                 </td>
                 <td width="20" class="ultimo"></td>
                 <td align="right">

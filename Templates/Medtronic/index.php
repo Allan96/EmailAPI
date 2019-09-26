@@ -46,7 +46,7 @@
         <div class="container-fluid mt-5">
             <div class="row">
                 <div class="col-8">
-                    <div bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email">
+                    <div bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="email" style="font-family: Arial, Helvetica, sans-serif, Verdana, Geneva;font-size: 18px;">
                         <!-- HTML 4 -->
                         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
                         <!-- HTML5 -->
